@@ -1,14 +1,19 @@
 package pe.edu.upc.aww.takemehome0_0.dtos;
 
+import javax.persistence.Column;
 import java.time.LocalDate;
 
 public class UserDTO {
+
     private int idUser;
     private String name;
     private String email;
     private String phone;
     private LocalDate birthday;
     private String country;
+    private String username;
+    private String password;
+    private Boolean enabled;
 
     public int getIdUser() {
         return idUser;
@@ -57,4 +62,27 @@ public class UserDTO {
         this.country = country;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 }

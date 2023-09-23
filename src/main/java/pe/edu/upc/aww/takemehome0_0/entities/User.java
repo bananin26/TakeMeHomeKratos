@@ -19,17 +19,26 @@ public class User {
     private LocalDate birthday;
     @Column(name = "country",nullable = false)
     private String country;
+    @Column(length = 200)
+    private String username;
+    @Column(length = 200)
+    private String password;
+    private Boolean enabled;
+
     public User() {
     }
 
-    public User(int idUser, String name, String email,String phone, LocalDate birthday, String country) {
+    public User(String username,String password,Boolean enabled,int idUser, String name, String email,String phone, LocalDate birthday, String country) {
 
         this.idUser= idUser;
         this.name = name;
         this.email = email;
         this.phone=phone;
         this.birthday = birthday;
+        this.username=username;
         this.country = country;
+        this.password=password;
+        this.enabled=enabled;
     }
 
     public int getIdUser() {
@@ -80,4 +89,27 @@ public class User {
         this.country = country;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 }
